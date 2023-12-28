@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(long id) {
+    public User getUserById(Long id) {
         return userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
@@ -41,12 +41,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void removeUserById(long id) {
+    public void removeUserById(Long id) {
         userRepository.delete(userRepository.findById(id).orElseThrow(EntityNotFoundException::new));
     }
 
     @Override
-    public void updateUser(User user, long id) {
+    public void updateUser(User user, Long id) {
         user.setId(id);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
