@@ -22,7 +22,7 @@ GrantedAuthority - сущность, описывающая права юзер�
 - Настройте LoginSuccessHandler так, чтобы админа после аутентификации направляло на страницу /admin, а юзера на его страницу /user.
 
 > /login
-> DBInit -> data.sql (add insert for each table, tables are created based on @Entity after launching application)
-> login: user
-> password: user
-> roles: ROLE_ADMIN
+- DBInit -> data.sql (add insert for each table, tables are created based on @Entity after launching application)
+- login: user
+- password: user
+- roles: ROLE_ADMIN
